@@ -1,0 +1,27 @@
+# permissions for end users to view wens.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: wen-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: crd-controller
+    app.kubernetes.io/part-of: crd-controller
+    app.kubernetes.io/managed-by: kustomize
+  name: wen-viewer-role
+rules:
+- apiGroups:
+  - kubebin.com.my.domain
+  resources:
+  - wens
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - kubebin.com.my.domain
+  resources:
+  - wens/status
+  verbs:
+  - get

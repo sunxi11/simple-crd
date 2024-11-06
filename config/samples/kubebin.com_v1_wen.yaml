@@ -1,0 +1,12 @@
+apiVersion: kubebin.com.my.domain/v1
+kind: Wen
+metadata:
+  labels:
+    app.kubernetes.io/name: wen
+    app.kubernetes.io/instance: wen-sample
+    app.kubernetes.io/part-of: crd-controller
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: crd-controller
+  name: wen-sample
+spec:
+  # TODO(user): Add fields here
